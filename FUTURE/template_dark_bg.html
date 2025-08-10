@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Write Description here for SEO" />
+    <title>Write Title here for SEO</title>
+    <link rel="icon" href="" />
+
+    <link rel="stylesheet" href="CSS/loader.css" />
+    <link rel="stylesheet" href="header/header.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+
+    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="footer/footer.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="Press_IMG/Logo/MWF Logo_Word_White.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Fredoka/Fredoka.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Quicksand/Quicksand.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Inter/Inter-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/NunitoSans/NunitoSans-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Raleway/Raleway-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    .hamburger .bar {
+      background-color: white;
+    }
+    header .nav-links a:hover,
+    header.sticky .nav-links a:hover {
+      color: var(--ghost_white);
+    }
+  </style>
+  <body>
+    <div id="loader" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
+
+    <main id="mainContent" class="hidden">
+      <!-- header start -->
+      <header>
+        <a href="index.html" class="logo">
+          <img
+            src="Press_IMG/Logo/MWF LOGO_Word_White.webp"
+            alt=""
+            id="logo-img"
+          />
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" style="--i: 1">Home</a>
+          </li>
+          <li>
+            <a href="about_us.html" style="--i: 2" class="active">About Us</a>
+          </li>
+          <li>
+            <a href="accelerator_program.html" style="--i: 3"
+              >Accelerator Program</a
+            >
+          </li>
+          <li>
+            <a href="kiwami.html" style="--i: 4">Kiwami</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="burger_links">
+          <ul>
+            <li style="--i: 1">
+              <a href="index.html">Home</a>
+            </li>
+            <li style="--i: 2">
+              <a href="about_us.html" class="active">About Us</a>
+            </li>
+            <li style="--i: 3">
+              <a href="accelerator_program.html">Accelerator Program</a>
+            </li>
+            <li style="--i: 4">
+              <a href="kiwami.html">Kiwami</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <script>
+        window.addEventListener("scroll", function () {
+          var header = document.querySelector("header");
+          var logoImg = document.getElementById("logo-img");
+          var bars = document.querySelectorAll(".bar");
+
+          if (window.scrollY > 0) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        });
+      </script>
+
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const burgerLinks = document.querySelector(".burger_links");
+        let menuOpen = false;
+
+        hamburger.addEventListener("click", () => {
+          if (!menuOpen) {
+            burgerLinks.style.display = "block";
+            burgerLinks.style.animation = "slideBottom 0.5s ease forwards";
+            hamburger.classList.add("toggle");
+            menuOpen = true;
+          } else {
+            // 👇 Remove the toggle class immediately so bars animate back right away
+            hamburger.classList.remove("toggle");
+
+            // Then play the close animation
+            burgerLinks.style.animation = "backtoup 0.5s ease forwards";
+
+            // And hide the menu after the animation
+            burgerLinks.addEventListener("animationend", function handler() {
+              burgerLinks.style.display = "none";
+              menuOpen = false;
+              burgerLinks.removeEventListener("animationend", handler);
+            });
+          }
+        });
+      </script>
+      <script>
+        function handleResize() {
+          const burgerLinks = document.querySelector(".burger_links");
+          const hamburger = document.querySelector(".hamburger");
+
+          if (window.innerWidth < 1000) {
+            burgerLinks.style.display = "none";
+
+            // 🔄 Reset hamburger icon and menu state
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          } else {
+            // On large screens, make sure burger menu is hidden and icon reset
+            burgerLinks.style.display = "";
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          }
+        }
+
+        // Listen for resize events
+        window.addEventListener("resize", handleResize);
+
+        // Initial check on page load
+        handleResize();
+      </script>
+      <!-- header end -->
+      <!-- body start -->
+
+      <div class="body-starts-Here">BODY STARTS HERE</div>
+
+      <!-- body end -->
+      <!-- footer start -->
+      <footer>
+        <div class="lets_talk_contact">
+          <h1 class="footer_contact_title">Let's talk</h1>
+          <p class="footer_contact_desc">you making a game?</p>
+          <p class="footer_contact_desc">We are!</p>
+          <p class="footer_contact_desc">
+            Come join our Discord to stay connected!
+          </p>
+        </div>
+        <div class="lets_contact_button">
+          <button class="contact_us" onclick="window.location.href='#'">
+            Contact Us
+          </button>
+          <button class="discord" onclick="window.location.href='#'">
+            Join Discord!
+          </button>
+        </div>
+        <div class="footer_cards">
+          <div class="footer_card">
+            <h1 class="card_title">Reach Us!</h1>
+            <a href="" class="details"
+              ><i class="fa-solid fa-envelope"></i>
+              <div class="detail_text">Email Us</div></a
+            >
+          </div>
+          <div class="footer_card">
+            <h1 class="card_title">Our Socials</h1>
+            <a href="" class="details"
+              ><i class="fa-brands fa-youtube"></i>
+              <div class="detail_text">Youtube</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-linkedin"></i>
+              <div class="detail_text">Linkedin</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-discord"></i>
+              <div class="detail_text">Discord</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-instagram"></i>
+              <div class="detail_text">Instagram</div></a
+            >
+            <a href="" class="details"
+              ><i class="itch-space fa-brands fa-itch-io"></i>
+              <div class="detail_text">Itch.io</div></a
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- footer end -->
+      <script src="JS/loader.js"></script>
+    </main>
+  </body>
+</html>

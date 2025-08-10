@@ -1,0 +1,126 @@
+@font-face {
+  font-family: Fredoka;
+  src: url(../Font/Fredoka/Fredoka.ttf);
+}
+@font-face {
+  font-family: Quicksand;
+  src: url(../Font/Quicksand/Quicksand.ttf);
+}
+@font-face {
+  font-family: Inter_Norm;
+  src: url(../Font/Inter/Inter-Norm.ttf);
+}
+@font-face {
+  font-family: Inter_Italic;
+  src: url(../Font/Inter/Inter-Italic.ttf);
+}
+@font-face {
+  font-family: NunitoSans_Norm;
+  src: url(../Font/NunitoSans/NunitoSans-Norm.ttf);
+}
+@font-face {
+  font-family: NunitoSans_Italic;
+  src: url(../Font/NunitoSans/NunitoSans-Italic.ttf);
+}
+@font-face {
+  font-family: Raleway_Norm;
+  src: url(../Font/Raleway/Raleway-Norm.ttf);
+}
+@font-face {
+  font-family: Raleway_Italic;
+  src: url(../Font/Raleway/Raleway-Italic.ttf);
+}
+@font-face {
+  font-family: ComicNeue_Reg;
+  src: url(../Font/ComicNeue/ComicNeue-Regular.ttf);
+}
+@font-face {
+  font-family: ComicNeue_Bold;
+  src: url(../Font/ComicNeue/ComicNeue-Bold.ttf);
+}
+@font-face {
+  font-family: ComicNeue_Bold_Italic;
+  src: url(../Font/ComicNeue/ComicNeue-BoldItalic.ttf);
+}
+@font-face {
+  font-family: ComicNeue_Reg_Italic;
+  src: url(../Font/ComicNeue/ComicNeue-Italic.ttf);
+}
+@font-face {
+  font-family: RubikDoodle;
+  src: url(../Font/RubikDoodle/RubikDoodle.ttf);
+}
+@font-face {
+  font-family: CabinSketch_Reg;
+  src: url(../Font/CabinSketch/CabinSketch-Regular.ttf);
+}
+@font-face {
+  font-family: CabinSketch_Bold;
+  src: url(../Font/CabinSketch/CabinSketch-Bold.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  /* Preset Color / Placement */
+  --header_font_1: Fredoka;
+  --header_font_2: Quicksand;
+  --body_font_Inter: Inter_Norm;
+  --body_font_Nunito: NunitoSans_Norm;
+  --body_font_Raleway: Raleway_Norm;
+  --body_font_Cabin: CabinSketch_Reg;
+  --body_font_Cabin_Bold: CabinSketch_Bold;
+  --label_font_Comic_Neue: ComicNeue_Reg;
+  --label_font_Comic_Neue_Bold: ComicNeue_Bold;
+
+  --test-font-size: 100px;
+  --title_size: 48px;
+  --title_weight: 500;
+  --title_color: #4a5e7d;
+  --title_color_white: #f8f8ff;
+  --body_size: 20px;
+
+  --accent-color: #f09500;
+  --gunmetal_black: #2d2d41;
+  --ghost_white: #f8f8ff;
+  --dark_blue: #4a5e7d;
+  --azure_white: #d8eafd;
+
+  --footer_card_main_color: #f5f5f5;
+  --footer_card_shadow: #eaeaea;
+
+  --responsive_title_size: 40px;
+}
+
+.fredoka {
+  font-family: var(--header_font_1);
+  font-weight: 500;
+  font-size: var(--test-font-size);
+}
+.quicksand {
+  font-family: var(--header_font_2);
+  font-size: var(--test-font-size);
+}
+.inter {
+  font-family: var(--body_font_Inter);
+  font-size: var(--test-font-size);
+}
+.nunito {
+  font-family: var(--body_font_Nunito);
+  font-size: var(--test-font-size);
+}
+.raleway {
+  font-family: var(--body_font_Raleway);
+  font-size: var(--test-font-size);
+}
+.cabinsketch {
+  font-family: var(--body_font_Cabin);
+  font-size: var(--test-font-size);
+}
+.cabinsketchbold {
+  font-family: var(--body_font_Cabin_Bold);
+  font-size: var(--test-font-size);
+}

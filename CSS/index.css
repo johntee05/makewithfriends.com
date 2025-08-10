@@ -1,0 +1,478 @@
+@import url("main.css");
+
+:root {
+  --white_bg: #fff;
+  --game_trailer_bg: #2d2d41;
+  --accelerator_floating_bg: #f8f8ff;
+  --accelerator_game_bg: #d9d9d9;
+  --miko_bg: #4a5e7d;
+
+  --subtitle_size: 32px;
+}
+section {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+/* What are we section CSS */
+section.whatarewe {
+  background-color: var(--white_bg);
+  text-align: center;
+  align-items: center;
+  padding: 90px 0;
+  min-height: 100vh;
+  height: auto;
+}
+.whatarewe_title {
+  font-size: var(--title_size);
+  font-family: var(--header_font_1);
+  font-weight: var(--title_weight);
+  color: var(--title_color);
+  background-color: #d8eafd;
+  padding: 10px 50px 10px 50px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+}
+.whatarewe_body {
+  font-size: var(--body_size);
+  font-family: var(--body_font_Inter);
+  line-height: 25px;
+  margin: 20px 350px 20px 350px;
+  text-align: justify;
+}
+
+/* MWF Illustration Part */
+.mwf_illustration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.illustration_img {
+  height: 500px;
+  width: auto;
+}
+
+/* Current Game Trailer Section */
+section.trailer {
+  background-color: var(--game_trailer_bg);
+  text-align: center;
+  overflow: hidden;
+}
+.trailer_title {
+  font-family: var(--body_font_Cabin_Bold);
+  font-size: var(--title_size);
+  color: var(--title_color_white);
+  padding: 30px 0;
+}
+.trailer_container {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  /* for Video */
+  /* 去这个website然后type适合device的width, 过后就可以算出16:9的高度： https://aspectratiocalculator.com/16-9.html */
+}
+
+/* Replace with IMG, will delete if got video */
+.trailer_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+  border-radius: 25px;
+}
+
+.coming_soon_text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 100px;
+  font-weight: bold;
+  font-family: var(--body_font_Cabin_Bold);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+.trailer_container::after {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Accelerator Program Section */
+section.accelerator {
+  background-color: var(--white_bg);
+  text-align: center;
+  align-items: center;
+  min-height: 100vh;
+  height: auto;
+  padding: 20px 0;
+}
+.accelerator_container {
+  background-color: var(--accelerator_floating_bg);
+  width: 92%;
+  border-radius: 25px;
+}
+.accelerator_title {
+  font-family: var(--header_font_1);
+  font-size: var(--title_size);
+  color: var(--title_color);
+  font-weight: var(--title_weight);
+  margin: 10px 0 10px 0;
+}
+.accelerator_body {
+  font-size: var(--body_size);
+  font-family: var(--body_font_Inter);
+  line-height: 25px;
+  margin: 20px 350px;
+  text-align: justify;
+}
+.game_section {
+  width: 80%;
+  height: 240px;
+  background-color: var(--accelerator_game_bg);
+  display: flex;
+  text-align: center;
+  margin: 30px auto 30px auto;
+  border-radius: 20px;
+  box-shadow: -3px 3px 10px black;
+}
+.game_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game_logo {
+  width: 240px;
+  border-radius: 20px;
+}
+.game_info {
+  display: grid;
+  align-items: center;
+}
+.game_name {
+  font-family: var(--header_font_1);
+  color: var(--title_color);
+  font-weight: calc(var(--title_weight) + 50);
+  font-size: var(--subtitle_size);
+  margin: 10px 0 10px 20px;
+  text-align: left;
+}
+.game_desc {
+  font-family: var(--body_font_Nunito);
+  font-size: var(--body_size);
+  text-align: justify;
+  margin: 0 20px 10px 20px;
+}
+
+/* Download Button CSS Start */
+.downloads {
+  position: relative;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--title_color);
+  box-shadow: 4px 4px var(--title_color);
+  background-color: var(--accelerator_floating_bg);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 0 10px 20px;
+}
+
+.downloads,
+.downloads__icon,
+.downloads__text {
+  transition: all 0.3s;
+}
+
+.downloads .downloads__text {
+  transform: translateX(22px);
+  color: var(--title_color);
+  font-weight: 600;
+}
+
+.downloads .downloads__icon {
+  position: absolute;
+  transform: translateX(159px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--accelerator_game_bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.downloads .svg {
+  width: 20px;
+  fill: var(--title_color);
+}
+
+.downloads:hover {
+  background: var(--accelerator_game_bg);
+}
+
+.downloads:hover .downloads__text {
+  color: transparent;
+}
+
+.downloads:hover .downloads__icon {
+  width: 199px;
+  transform: translateX(0);
+}
+
+.downloads:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--accelerator_game_bg);
+}
+/* Download Button CSS End */
+
+/* MIKO Team / Kiwami */
+section.miko {
+  background-color: var(--miko_bg);
+  text-align: justify;
+}
+.miko_title {
+  font-family: var(--body_font_Cabin_Bold);
+  font-size: calc(var(--title_size) + 40px);
+  color: var(--title_color_white);
+  padding: 30px 100px;
+}
+.kwm_logo{
+  width: 60%;
+  height: auto;
+  padding-left: 70px;
+}
+.miko_desc {
+  font-family: var(--body_font_Nunito);
+  color: var(--title_color_white);
+  font-size: var(--body_size);
+  padding: 0 100px;
+}
+
+/* Responsive */
+@media (max-width: 1700px) {
+  .whatarewe_body {
+    margin: 20px 300px;
+  }
+  .accelerator_body {
+    margin: 20px 200px;
+  }
+}
+@media (max-width: 1500px) {
+  .whatarewe_body {
+    margin: 20px 250px;
+  }
+  .coming_soon_text {
+    font-size: calc(var(--title_size) + 40px);
+  }
+  .accelerator_body {
+    margin: 20px 150px;
+  }
+  .game_desc {
+    font-size: calc(var(--body_size) - 2px);
+  }
+  .game_name {
+    font-size: calc(var(--subtitle_size) - 2px);
+  }
+}
+@media (max-width: 1400px) {
+  .game_section {
+    height: 270px;
+  }
+  .game_logo {
+    width: 270px;
+  }
+}
+@media (max-width: 1300px) {
+  .whatarewe_body {
+    margin: 20px 200px;
+  }
+  .mwf_illustration {
+    top: 75%;
+  }
+  .accelerator_body {
+    margin: 20px 100px;
+  }
+}
+@media (max-width: 1100px) {
+  .whatarewe_title {
+    font-size: var(--responsive_title_size);
+  }
+  .whatarewe_body {
+    margin: 20px 150px;
+    font-size: calc(var(--body_size) - 2px);
+  }
+  .accelerator_body {
+    font-size: calc(var(--body_size) - 2px);
+  }
+  .coming_soon_text {
+    font-size: calc(var(--title_size) + 35px);
+  }
+}
+@media (max-width: 1000px) {
+  .accelerator_title {
+    font-size: var(--responsive_title_size);
+  }
+  .game_desc {
+    font-size: calc(var(--body_size) - 4px);
+  }
+}
+@media (max-width: 950px) {
+  .game_desc {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 900px) {
+  .whatarewe_body {
+    margin: 20px 100px;
+  }
+  .coming_soon_text {
+    font-size: calc(var(--title_size) + 30px);
+  }
+
+  .accelerator_body {
+    margin: 20px;
+  }
+
+  .game_section {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    padding-top: 70px;
+    padding-bottom: 20px;
+    text-align: center;
+  }
+
+  .game_img {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .game_logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    border: 4px solid white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: white;
+  }
+
+  .game_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1;
+  }
+
+  .game_name {
+    text-align: center;
+    margin: 0;
+  }
+
+  .game_desc {
+    text-align: justify;
+    margin: 10px 0;
+  }
+
+  .downloads {
+    margin: 0 auto;
+  }
+  .miko{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+.kwm_logo{
+  width: 90%;
+  height: auto;
+  padding: 0;
+}
+  .miko_desc {
+    padding: 0 80px;
+  }
+}
+@media (max-width: 800px) {
+  .whatarewe_body {
+    margin: 10px 50px;
+  }
+}
+@media (max-width: 700px) {
+  .coming_soon_text {
+    font-size: calc(var(--title_size) + 20px);
+  }
+  .miko_title {
+    padding: 30px 70px;
+    text-align: center;
+  }
+  .miko_desc {
+    padding: 0 70px;
+  }
+}
+@media (max-width: 650px) {
+  .miko_title {
+    padding: 30px 50px;
+  }
+  .miko_desc {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 600px) {
+  .whatarewe_body {
+    font-size: calc(var(--body_size) - 4px);
+    word-spacing: -1px;
+  }
+  .mwf_illustration {
+    top: 75%;
+  }
+}
+@media (max-width: 550px) {
+  .coming_soon_text {
+    font-size: calc(var(--title_size) + 10px);
+  }
+}
+@media (max-width: 500px) {
+  .coming_soon_text {
+    font-size: var(--title_size);
+  }
+  .miko_title {
+    font-size: calc(var(--title_size) + 10px);
+    padding: 30px 30px;
+  }
+  .miko_desc {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 400px) {
+  .whatarewe_title {
+    font-size: calc(var(--responsive_title_size) - 3px);
+    padding: 10px 40px;
+  }
+  .whatarewe_body {
+    margin: 5px 30px;
+  }
+  .coming_soon_text {
+    font-size: calc(var(--title_size) - 5px);
+  }
+  .illustration_img {
+    height: 400px;
+    width: auto;
+  }
+}

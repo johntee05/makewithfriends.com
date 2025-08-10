@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Make With Friends" />
+    <meta name="description" content="Makewithfriends" />
+    <meta name="description" content="Game Studio" />
+    <meta name="description" content="About Us" />
+    <title>About Us - Make with Friends</title>
+    <link rel="stylesheet" href="CSS/loader.css" />
+    <link rel="stylesheet" href="header/header.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/about_us.css" />
+    <link rel="stylesheet" href="footer/footer.css" />
+    <link rel="icon" href="Press_IMG/Logo/MWF_LOGO_Square_Black.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="Press_IMG/Logo/MWF_LOGO_Word_White.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Fredoka/Fredoka.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Quicksand/Quicksand.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Inter/Inter-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/NunitoSans/NunitoSans-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Raleway/Raleway-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .hamburger .bar {
+        background-color: white;
+      }
+      header .nav-links a:hover,
+      header.sticky .nav-links a:hover {
+        color: var(--ghost_white);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
+
+    <main id="mainContent" class="hidden">
+      <header>
+        <a href="index.html" class="logo">
+          <img
+            src="Press_IMG/Logo/MWF_LOGO_Word_White.webp"
+            alt=""
+            id="logo-img"
+          />
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" style="--i: 1">Home</a>
+          </li>
+          <li>
+            <a href="about_us.html" style="--i: 2" class="active">About Us</a>
+          </li>
+          <li>
+            <a href="accelerator_program.html" style="--i: 3"
+              >Accelerator Program</a
+            >
+          </li>
+          <li>
+            <a href="kiwami.html" style="--i: 4">Kiwami</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="burger_links">
+          <ul>
+            <li style="--i: 1">
+              <a href="index.html">Home</a>
+            </li>
+            <li style="--i: 2">
+              <a href="about_us.html" class="active">About Us</a>
+            </li>
+            <li style="--i: 3">
+              <a href="accelerator_program.html">Accelerator Program</a>
+            </li>
+            <li style="--i: 4">
+              <a href="kiwami.html">Kiwami</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <script>
+        window.addEventListener("scroll", function () {
+          var header = document.querySelector("header");
+          var logoImg = document.getElementById("logo-img");
+          var bars = document.querySelectorAll(".bar");
+
+          if (window.scrollY > 0) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        });
+      </script>
+
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const burgerLinks = document.querySelector(".burger_links");
+        let menuOpen = false;
+
+        hamburger.addEventListener("click", () => {
+          if (!menuOpen) {
+            burgerLinks.style.display = "block";
+            burgerLinks.style.animation = "slideBottom 0.5s ease forwards";
+            hamburger.classList.add("toggle");
+            menuOpen = true;
+          } else {
+            hamburger.classList.remove("toggle");
+
+            burgerLinks.style.animation = "backtoup 0.5s ease forwards";
+
+            burgerLinks.addEventListener("animationend", function handler() {
+              burgerLinks.style.display = "none";
+              menuOpen = false;
+              burgerLinks.removeEventListener("animationend", handler);
+            });
+          }
+        });
+      </script>
+      <script>
+        function handleResize() {
+          const burgerLinks = document.querySelector(".burger_links");
+          const hamburger = document.querySelector(".hamburger");
+
+          if (window.innerWidth < 1000) {
+            burgerLinks.style.display = "none";
+
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          } else {
+            burgerLinks.style.display = "";
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          }
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        handleResize();
+      </script>
+      <!-- header end -->
+      <!-- body start -->
+      <!-- makewithfriends section -->
+      <section class="makewithfriends">
+        <div class="infos">
+          <div class="mwf_info">
+            <div class="mwf_name">Make with Friends</div>
+            <div class="mwf_desc">
+              To craft heartfelt, collaborative games and experiences that feel
+              cozy, personal, and joyfully handmade — and to do it with the same
+              kindness and curiosity we’d bring to a creative afternoon with
+              friends
+            </div>
+          </div>
+          <img
+            src="Press_IMG/Others/MWF_Illustration.webp"
+            alt="MWF-Logo"
+            class="mwf_logo"
+          />
+        </div>
+      </section>
+
+      <!-- overview section -->
+      <section class="overview">
+        <div class="brand_overview">
+          <h1 class="overview_title">Brand Overview</h1>
+          <p class="overview_desc">
+            Make With Friends is a cozy, collaborative indie game studio based
+            in Malaysia. We craft heartfelt experiences through games,
+            storytelling, and community-driven projects. Our name isn’t just a
+            label — it’s our manifesto. We believe in making with friends, not
+            just for them.
+          </p>
+          <p class="overview_desc">
+            Our studio atmosphere is playful yet professional — like a fun
+            creative workshop where everyone’s ideas matter. We’re the team that
+            makes magic with a sketchbook, a good cup of teh-tarik, and honest
+            teamwork
+          </p>
+        </div>
+        <div class="mission_vision">
+          <div class="mission_vision_texts mission">
+            <h1 class="overview_title">Mission</h1>
+            <p class="overview_desc_mission_vision">
+              To craft heartfelt, collaborative games and experiences that feel
+              cozy, personal, and joyfully handmade — and to do it with the same
+              kindness and curiosity we’d bring to a creative afternoon with
+              friends.
+            </p>
+          </div>
+          <img
+            src="Press_IMG/About_Us/make-with-friends-illustration-1.webp"
+            alt="MWF_Chara_Soot_UUTH"
+            class="mission_img"
+          />
+        </div>
+        <div class="mission_vision">
+          <img
+            src="Press_IMG/About_Us/make-with-friends-illustration-2.webp"
+            alt="MWF_Chara_Soot_HSTN"
+            class="vision_img"
+          />
+          <div class="mission_vision_texts vision">
+            <h1 class="overview_title">Vision</h1>
+            <p class="overview_desc_mission_vision">
+              To be a leading voice in Southeast Asian indie games — known for
+              emotionally resonant storytelling, thoughtful design, and a studio
+              culture that celebrates collaboration, creativity, and community.
+            </p>
+          </div>
+        </div>
+        <div class="friends">
+          <h1 class="friends_title">Friends</h1>
+          <div class="friends_interface">
+            <img
+              src="Press_IMG/About_Us/MWF_Character_Erick.webp"
+              alt=""
+              class="friends_img fade"
+            />
+            <div class="friends_info fade">
+              <h2 class="friends_name fade">Erick Ritcher Lim</h2>
+              <p class="friends_desc fade">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+                facere repellat quisquam recusandae, impedit quae aliquid at
+                tempore debitis nulla? Libero, aperiam! Neque temporibus,
+                explicabo sint quo consequuntur iure veritatis!
+              </p>
+            </div>
+          </div>
+          <div class="friends_button_cards">
+            <h1 class="friends_title">Select Friends</h1>
+            <div class="friends_button_container">
+              <button
+                class="friends_button"
+                data-name="Erick Ritcher Lim"
+                data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              facere repellat quisquam recusandae, impedit quae aliquid at
+              tempore debitis nulla? Libero, aperiam! Neque temporibus,
+              explicabo sint quo consequuntur iure veritatis!"
+                data-img="Press_IMG/About_Us/MWF_Character_Erick.webp"
+              >
+                <img
+                  src="Press_IMG/About_Us/MWF_Character_Erick.webp"
+                  alt="Character"
+                />
+                <span class="friends_tooltip">Erick Ritcher Lim</span>
+              </button>
+              <button
+                class="friends_button"
+                data-name="Adib"
+                data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              facere repellat quisquam recusandae, impedit quae aliquid at
+              tempore debitis nulla? Libero, aperiam! Neque temporibus,
+              explicabo sint quo consequuntur iure veritatis!"
+                data-img="Press_IMG/About_Us/MWF_Character_Adib.webp"
+              >
+                <img
+                  src="Press_IMG/About_Us/MWF_Character_Adib.webp"
+                  alt="Character"
+                />
+                <span class="friends_tooltip">Adib</span>
+              </button>
+              <button
+                class="friends_button"
+                data-name="Elaine"
+                data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              facere repellat quisquam recusandae, impedit quae aliquid at
+              tempore debitis nulla? Libero, aperiam! Neque temporibus,
+              explicabo sint quo consequuntur iure veritatis!"
+                data-img="Press_IMG/About_Us/MWF_Character_Elaine.webp"
+              >
+                <img
+                  src="Press_IMG/About_Us/MWF_Character_Elaine.webp"
+                  alt="Character"
+                />
+                <span class="friends_tooltip">Elaine</span>
+              </button>
+              <button
+                class="friends_button"
+                data-name="Nicholas"
+                data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              facere repellat quisquam recusandae, impedit quae aliquid at
+              tempore debitis nulla? Libero, aperiam! Neque temporibus,
+              explicabo sint quo consequuntur iure veritatis!"
+                data-img="Press_IMG/About_Us/MWF_Character_Nicholas.webp"
+              >
+                <img
+                  src="Press_IMG/About_Us/MWF_Character_Nicholas.webp"
+                  alt="Character"
+                />
+                <span class="friends_tooltip">Nicholas</span>
+              </button>
+              <button
+                class="friends_button"
+                data-name="Revin"
+                data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              facere repellat quisquam recusandae, impedit quae aliquid at
+              tempore debitis nulla? Libero, aperiam! Neque temporibus,
+              explicabo sint quo consequuntur iure veritatis!"
+                data-img="Press_IMG/About_Us/MWF_Character_Revin.webp"
+              >
+                <img
+                  src="Press_IMG/About_Us/MWF_Character_Revin.webp"
+                  alt="Character"
+                />
+                <span class="friends_tooltip">Revin</span>
+              </button>
+              <button
+                class="friends_button"
+                data-name="Simon"
+                data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              facere repellat quisquam recusandae, impedit quae aliquid at
+              tempore debitis nulla? Libero, aperiam! Neque temporibus,
+              explicabo sint quo consequuntur iure veritatis!"
+                data-img="Press_IMG/About_Us/MWF_Character_Simon.webp"
+              >
+                <img
+                  src="Press_IMG/About_Us/MWF_Character_Simon.webp"
+                  alt="Character"
+                />
+                <span class="friends_tooltip">Simon</span>
+              </button>
+              <button
+                class="friends_button"
+                data-name="Sophie"
+                data-desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+              facere repellat quisquam recusandae, impedit quae aliquid at
+              tempore debitis nulla? Libero, aperiam! Neque temporibus,
+              explicabo sint quo consequuntur iure veritatis!"
+                data-img="Press_IMG/About_Us/MWF_Character_Sophie.webp"
+              >
+                <img
+                  src="Press_IMG/About_Us/MWF_Character_Sophie.webp"
+                  alt="Character"
+                />
+                <span class="friends_tooltip">Sophie</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <script>
+        const buttons = document.querySelectorAll(".friends_button");
+
+        const img = document.querySelector(".friends_img");
+        const name = document.querySelector(".friends_name");
+        const desc = document.querySelector(".friends_desc");
+
+        const fadeTargets = [img, name, desc];
+
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const newName = button.getAttribute("data-name");
+            const newDesc = button.getAttribute("data-desc");
+            const newImg = button.getAttribute("data-img");
+
+            fadeTargets.forEach((el) => el.classList.add("fade-out"));
+
+            setTimeout(() => {
+              name.textContent = newName;
+              desc.textContent = newDesc;
+              img.src = newImg;
+
+              fadeTargets.forEach((el) => el.classList.remove("fade-out"));
+            }, 300);
+          });
+        });
+      </script>
+      <!-- body end -->
+      <!-- footer start -->
+      <footer>
+        <div class="lets_talk_contact">
+          <h1 class="footer_contact_title">Let's talk</h1>
+          <p class="footer_contact_desc">you making a game?</p>
+          <p class="footer_contact_desc">We are!</p>
+          <p class="footer_contact_desc">
+            Come join our Discord to stay connected!
+          </p>
+        </div>
+        <div class="lets_contact_button">
+          <button class="contact_us" onclick="window.location.href='#'">
+            Contact Us
+          </button>
+          <button class="discord" onclick="window.location.href='#'">
+            Join Discord!
+          </button>
+        </div>
+        <div class="footer_cards">
+          <div class="footer_card">
+            <h1 class="card_title">Reach Us!</h1>
+            <a href="" class="details"
+              ><i class="fa-solid fa-envelope"></i>
+              <div class="detail_text">Email Us</div></a
+            >
+          </div>
+          <div class="footer_card">
+            <h1 class="card_title">Our Socials</h1>
+            <a href="" class="details"
+              ><i class="fa-brands fa-youtube"></i>
+              <div class="detail_text">Youtube</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-linkedin"></i>
+              <div class="detail_text">Linkedin</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-discord"></i>
+              <div class="detail_text">Discord</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-instagram"></i>
+              <div class="detail_text">Instagram</div></a
+            >
+            <a href="" class="details"
+              ><i class="itch-space fa-brands fa-itch-io"></i>
+              <div class="detail_text">Itch.io</div></a
+            >
+          </div>
+        </div>
+      </footer>
+      <!-- footer end -->
+      <script src="JS/loader.js"></script>
+    </main>
+  </body>
+</html>

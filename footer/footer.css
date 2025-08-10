@@ -1,0 +1,212 @@
+@import url("../CSS/main.css");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+footer {
+  height: 50vh;
+  background-color: white;
+}
+.lets_talk_contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0 10px 0;
+  margin-top: 25px;
+}
+.footer_contact_title {
+  font-family: var(--header_font_1);
+  font-size: var(--title_size);
+  font-weight: var(--title_weight);
+}
+.footer_contact_desc {
+  font-family: var(--body_font_Raleway);
+  margin-top: 3px;
+  font-size: var(--body_size);
+}
+.lets_contact_button {
+  display: flex;
+  justify-content: center;
+}
+.contact_us,
+.discord {
+  padding: 10px 50px;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  font-family: var(--label_font_Comic_Neue_Bold);
+  font-size: var(--body_size);
+}
+
+.contact_us {
+  margin: 5px 20px 0 0;
+  border: 2px solid var(--accent-color);
+  background-color: var(--ghost_white);
+  color: var(--accent-color);
+}
+.contact_us:hover {
+  background-color: var(--accent-color);
+  color: var(--ghost_white);
+  border: 2px solid var(--accent-color);
+}
+.discord {
+  margin: 5px 0 0 0;
+  border: 2px solid var(--dark_blue);
+  background-color: var(--dark_blue);
+  color: var(--azure_white);
+}
+.discord:hover {
+  background-color: var(--azure_white);
+  color: var(--dark_blue);
+}
+.footer_cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.footer_card {
+  width: 300px;
+  height: 300px;
+  margin: 20px 20px 40px 20px;
+  background-color: var(--footer_card_main_color);
+  padding: 15px;
+  border-radius: 30px;
+  box-shadow: -15px 15px var(--footer_card_shadow);
+  transition: all 0.5s ease-in-out;
+}
+.footer_card:hover {
+  transform: translateY(-3px);
+}
+.card_title {
+  font-family: var(--header_font_1);
+  font-size: calc(var(--title_size) - 8px);
+  font-weight: var(--title_weight);
+  color: var(--title_color);
+  padding: 5px 0 10px 5px;
+}
+i {
+  font-size: 25px;
+  z-index: 3;
+}
+.itch-space{
+  padding-right: 12px;
+  color: #fa5c5c;
+}
+.fa-envelope {
+  color: #c71610;
+  padding-right: 12px;
+}
+.fa-youtube {
+  color: red;
+  padding-right: 10px;
+}
+.fa-linkedin {
+  color: #0072b1;
+  margin-left: 3px;
+  padding-right: 13px;
+}
+.fa-discord {
+  color: #5865f2;
+  font-size: 20px;
+  margin-left: 1.5px;
+  padding-right: 12px;
+}
+.fa-instagram {
+  color: #c13584;
+  margin-left: 3px;
+  padding-right: 14px;
+}
+.fa-itch-io {
+  margin-left: 1.5px;
+}
+.details {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: var(--footer_card_shadow);
+  width: 150px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.5s;
+  border: 2px solid transparent; /* Start with transparent border */
+}
+.details:hover {
+  border: 2px solid var(--dark_blue);
+}
+
+/* Ensure text is on top */
+.detail_text {
+  font-family: var(--body_font_Nunito);
+  font-size: calc(var(--body_size) - 2px);
+  color: black;
+  z-index: 2;
+  position: relative;
+}
+
+@media (max-width: 750px) {
+  .lets_talk_contact {
+    padding: 30px 0 10px 0;
+  }
+  .footer_cards {
+    background-color: var(--footer_card_main_color);
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+  .footer_card {
+    box-shadow: 0px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+  }
+}
+@media (max-width: 600px) {
+  .footer_contact_title {
+    font-size: var(--responsive_title_size);
+  }
+  .contact_us,
+  .discord {
+    padding: 10px 30px;
+  }
+  .card_title {
+    font-size: calc(var(--responsive_title_size) - 8px);
+  }
+}
+
+@media (max-width: 490px) {
+  .footer_contact_desc,
+  .contact_us,
+  .discord,
+  .detail_text {
+    font-size: calc(var(--body_size) - 4px);
+  }
+
+  .card_title {
+    font-size: calc(var(--responsive_title_size) - 16px);
+  }
+  .details {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer_card {
+    margin: 0;
+  }
+}
+@media (max-width: 360px) {
+  .footer_card {
+    padding: 5px;
+  }
+}

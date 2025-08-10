@@ -1,0 +1,607 @@
+@import url("main.css");
+
+section {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 0 0 0;
+}
+
+.hamburger .bar {
+  background-color: white;
+}
+
+/* makewithfriends section */
+.makewithfriends {
+  background-color: var(--dark_blue);
+  margin-bottom: 30px;
+}
+
+.infos {
+  display: flex;
+  padding: 70px 100px;
+  justify-content: space-between;
+}
+
+.mwf_logo {
+  max-width: 500px;
+  height: auto;
+  width: 100%;
+  object-fit: contain;
+}
+
+.mwf_info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 30px;
+}
+
+.mwf_name {
+  font-size: calc(var(--title_size) + 52px);
+  font-family: var(--body_font_Cabin);
+  font-weight: 500;
+  color: var(--azure_white);
+  padding-bottom: 10px;
+}
+
+.mwf_desc {
+  font-family: var(--body_font_Nunito);
+  color: var(--azure_white);
+  font-size: calc(var(--body_size) + 6px);
+  text-align: justify;
+}
+
+/* overview section */
+.overview {
+  min-height: 100vh;
+  height: auto;
+}
+
+.brand_overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.overview_title {
+  font-size: var(--title_size);
+  font-family: var(--header_font_1);
+  font-weight: var(--title_weight);
+  color: var(--title_color);
+  background-color: var(--azure_white);
+  max-width: 600px;
+  padding: 10px 50px 10px 50px;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.overview_desc {
+  font-size: calc(var(--body_size) + 3px);
+  font-family: var(--body_font_Inter);
+  line-height: 30px;
+  text-align: justify;
+  margin: 10px 16.2%;
+}
+
+.mission_vision {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.mission_vision_texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  justify-content: space-evenly;
+}
+.mission {
+  margin-right: 50px;
+}
+.vision {
+  margin-left: 50px;
+}
+
+.overview_desc_mission_vision {
+  font-size: calc(var(--body_size) + 3px);
+  font-family: var(--body_font_Inter);
+  line-height: 30px;
+  margin: 10px 0;
+  text-align: justify;
+}
+
+.mission_img {
+  width: 400px;
+  height: 400px;
+  align-items: center;
+  border-radius: 30px;
+}
+.vision_img {
+  width: 400px;
+  height: auto;
+  align-items: center;
+  border-radius: 30px;
+}
+
+/* Friends section */
+.friends {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.friends_title {
+  text-align: center;
+  font-family: var(--header_font_1);
+  font-size: calc(var(--title_size) + 12px);
+  font-weight: var(--title_weight);
+  color: var(--title_color);
+  margin-bottom: 10px;
+}
+
+.friends_interface {
+  display: flex;
+  background-color: var(--ghost_white);
+  border-radius: 70px;
+  box-shadow: 0 0 30px var(--azure_white);
+  padding: 20px;
+  width: 80%;
+}
+
+.fade {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.friends_img {
+  width: 300px;
+  height: 300px;
+  margin-right: 50px;
+}
+
+.friends_info {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--azure_white);
+  border-radius: 60px;
+  padding: 40px;
+}
+
+.friends_name {
+  padding-top: 15px;
+  font-size: var(--title_size);
+  font-family: var(--header_font_2);
+  color: var(--title_color);
+}
+
+.friends_desc {
+  padding: 30px 25px 0 0;
+  font-size: var(--body_size);
+  font-family: var(--body_font_Cabin);
+  text-align: justify;
+}
+
+.friends_button_cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: var(--ghost_white);
+  border-radius: 70px;
+  box-shadow: 0 0 30px var(--azure_white);
+  padding: 20px;
+  width: 80%;
+}
+
+.select_friends {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.friends_button_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.friends_button {
+  width: 150px;
+  height: 150px;
+  background-color: #3b4a6b;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  text-decoration: none;
+  box-shadow: none;
+  border: 0;
+}
+
+.friends_button:hover {
+  transform: scale(1.05);
+  background-color: var(--azure_white);
+  border: 5px solid var(--dark_blue);
+}
+
+.friends_button img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  object-fit: contain;
+}
+
+.friends_tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--title_color);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.friends_button:hover .friends_tooltip {
+  opacity: 1;
+}
+
+/* Media Queries */
+@media (max-width: 2480px) {
+  .overview_desc {
+    margin: 10px 16%;
+  }
+}
+@media (max-width: 2430px) {
+  .overview_desc {
+    margin: 10px 15.6%;
+  }
+}
+@media (max-width: 2260px) {
+  .overview_desc {
+    margin: 10px 15%;
+  }
+}
+@media (max-width: 2115px) {
+  .overview_desc {
+    margin: 10px 14.2%;
+  }
+}
+@media (max-width: 1990px) {
+  .overview_desc {
+    margin: 10px 13.7%;
+  }
+}
+@media (max-width: 1905px) {
+  .overview_desc {
+    margin: 10px 13.1%;
+  }
+}
+@media (max-width: 1800px) {
+  .overview_desc {
+    margin: 10px 12.5%;
+  }
+}
+@media (max-width: 1700px) {
+  .infos {
+    padding: 60px 70px;
+  }
+}
+@media (max-width: 1675px) {
+  .overview_desc {
+    margin: 10px 11.5%;
+  }
+}
+@media (max-width: 1640px) {
+  .overview_desc {
+    margin: 10px 11%;
+  }
+}
+
+@media (max-width: 1525px) {
+  .overview_desc {
+    margin: 10px 10%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .infos {
+    padding: 50px 50px;
+  }
+  .mwf_name {
+    font-size: calc(var(--title_size) + 40px);
+    text-align: center;
+  }
+  .mwf_desc {
+    font-size: calc(var(--body_size) + 2px);
+  }
+  .mwf_logo {
+    width: 450px;
+    height: auto;
+  }
+}
+@media (max-width: 1430px) {
+  .overview_desc {
+    margin: 10px 9.3%;
+  }
+}
+
+@media (max-width: 1370px) {
+  .overview_desc {
+    margin: 10px 8.5%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .overview_desc {
+    margin: 10px 7.5%;
+  }
+  .mwf_name {
+    font-size: calc(var(--title_size) + 35px);
+  }
+}
+
+@media (max-width: 1250px) {
+  .mwf_name {
+    font-size: calc(var(--title_size) + 30px);
+  }
+  .mwf_logo {
+    width: 400px;
+    height: auto;
+  }
+}
+@media (max-width: 1225px) {
+  .overview_desc {
+    margin: 10px 6.5%;
+  }
+}
+@media (max-width: 1175px) {
+  .mwf_info {
+    padding: 0;
+  }
+}
+@media (max-width: 1165px) {
+  .overview_desc {
+    margin: 10px 5.5%;
+  }
+}
+
+/* Tablets (≤ 1150px) */
+@media (max-width: 1150px) {
+  .infos {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    margin-top: 30px;
+  }
+  .mwf_logo {
+    padding-top: 50px;
+    width: 500px;
+    height: auto;
+  }
+  .mwf_info {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .mission_vision {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mission_vision_texts {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  .mission_img,
+  .vision_img {
+    display: none;
+  }
+  .mission,
+  .vision {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .friends_interface {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .friends_img {
+    margin: 0 0 20px 0;
+  }
+
+  .friends_desc {
+    padding: 20px;
+  }
+}
+
+/* Phones (≤ 768px) */
+@media (max-width: 768px) {
+  .overview_title {
+    width: 90%;
+    padding: 10px 20px;
+    font-size: calc(var(--title_size) - 4px);
+  }
+  .overview_desc,
+  .overview_desc_mission_vision,
+  .mwf_desc {
+    font-size: calc(var(--body_size) + 1px);
+  }
+
+  .friends_button {
+    width: 100px;
+    height: 100px;
+  }
+
+  .friends_button img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .friends_tooltip {
+    font-size: 0.75rem;
+  }
+
+  .friends_title {
+    font-size: var(--title_size);
+  }
+
+  .friends_interface {
+    width: 95%;
+  }
+
+  .friends_button_cards {
+    gap: 10px;
+  }
+}
+@media (max-width: 725px) {
+  .mwf_name {
+    font-size: calc(var(--title_size) + 20px);
+  }
+  .mwf_logo {
+    width: 450px;
+    height: auto;
+  }
+}
+@media (max-width: 630px) {
+  .mwf_name {
+    font-size: calc(var(--title_size) + 10px);
+  }
+  .mwf_logo {
+    width: 400px;
+    height: auto;
+  }
+}
+@media (max-width: 600px) {
+  .friends_name {
+    font-size: calc(var(--title_size) - 5px);
+  }
+}
+@media (max-width: 540px) {
+  .mwf_name {
+    font-size: calc(var(--title_size) + 5px);
+  }
+  .mwf_logo {
+    width: 370px;
+    height: auto;
+  }
+}
+@media (max-width: 500px) {
+  .mwf_name {
+    font-size: var(--title_size);
+  }
+  .friends_name {
+    font-size: calc(var(--title_size) - 7px);
+  }
+}
+/* Very small devices (≤ 480px) */
+@media (max-width: 480px) {
+  .overview_title {
+    font-size: calc(var(--title_size) - 8px);
+  }
+  .overview_desc,
+  .overview_desc_mission_vision,
+  .mwf_desc {
+    font-size: var(--body_size);
+  }
+
+  .friends_button {
+    width: 90px;
+    height: 90px;
+  }
+
+  .friends_button img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 450px) {
+  .mwf_name {
+    font-size: calc(var(--title_size) - 5px);
+  }
+  .friends_name {
+    font-size: calc(var(--title_size) - 9px);
+  }
+}
+@media (max-width: 420px) {
+  .friends_name {
+    font-size: calc(var(--title_size) - 12px);
+  }
+}
+@media (max-width: 400px) {
+  .overview_title,
+  .mwf_name {
+    font-size: calc(var(--title_size) - 10px);
+  }
+  .overview_desc,
+  .overview_desc_mission_vision,
+  .mwf_desc,
+  .friends_desc {
+    font-size: calc(var(--body_size) - 2px);
+  }
+  .mwf_logo {
+    width: 350px;
+    height: auto;
+  }
+  .friends_name {
+    font-size: calc(var(--title_size) - 18px);
+  }
+}
+@media (max-width: 375px) {
+  .friends_name {
+    font-size: calc(var(--title_size) - 20px);
+  }
+}
+@media (max-width: 370px) {
+  .mwf_logo {
+    width: 300px;
+    height: auto;
+  }
+}
+@media (max-width: 360px) {
+  .overview_title,
+  .mwf_name {
+    font-size: calc(var(--title_size) - 12px);
+  }
+}
+@media (max-width: 350px) {
+  .overview_title,
+  .mwf_name {
+    font-size: calc(var(--title_size) - 16px);
+  }
+  .mwf_desc,
+  .overview_desc,
+  .overview_desc_mission_vision {
+    font-size: calc(var(--body_size) - 3px);
+  }
+}

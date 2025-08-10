@@ -1,0 +1,218 @@
+/* Font */
+@font-face {
+  font-family: Fredoka;
+  src: url(../Font/Fredoka/Fredoka.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --background: #2d2d41;
+  --active_color: #f09500;
+  --default_word_color: #acbac8;
+  --hover_color: #4a5e7d;
+}
+header {
+  font-family: Fredoka;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, padding 0.8s ease-in-out;
+  z-index: 999;
+  background-color: transparent;
+  padding: 10px 2px;
+}
+header.appear {
+  animation: headerAppear 0.5s forwards;
+}
+@keyframes headerAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+header.sticky {
+  padding: 17px 2px;
+  background-color: var(--background);
+}
+header .logo img {
+  position: relative;
+  transition: 0.6s;
+  animation: slideRight 1s ease forwards;
+  opacity: 0;
+  width: 200px;
+  height: auto;
+  margin-left: 30px;
+}
+.nav-links {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 30px;
+}
+.nav-links li {
+  position: relative;
+  list-style: none;
+}
+.nav-links a {
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--default_word_color);
+  letter-spacing: 1px;
+  font-weight: 500px;
+  transition: color 0.5s ease-in-out;
+  animation: slideTop 0.5s ease forwards;
+  animation-delay: calc(0.1s * var(--i));
+  opacity: 0;
+  font-size: var(--body_size);
+  letter-spacing: 0px;
+}
+
+header.sticky .logo,
+header.sticky .nav-links a {
+  color: var(--default_word_color);
+}
+
+header ul li a.active,
+header.sticky a.active {
+  color: var(--active_color);
+  pointer-events: none;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes backtoup {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 34px;
+  height: 30px;
+  overflow: visible;
+  margin-right: 30px;
+}
+.hamburger .bar {
+  width: 36px;
+  flex-basis: 100%;
+  height: 4px;
+  background-color: black;
+  margin: 3px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  transform-origin: center;
+}
+.burger_links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  color: var(--title_color);
+}
+.burger_links li {
+  list-style: none;
+  opacity: 0;
+  padding: 20px;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+.burger_links li a {
+  display: block;
+  padding: 10px;
+  color: var(--title_color);
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  font-size: calc(var(--body_size) + 2px);
+}
+.burger_links a {
+  color: var(--title_color);
+  text-decoration: none;
+}
+.burger_links li:nth-child(odd) {
+  background-color: var(--footer_card_main_color);
+}
+.burger_links li:nth-child(even) {
+  background-color: var(--footer_card_shadow);
+}
+.hamburger.toggle .bar:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 7px) scaleX(1.2);
+}
+
+.hamburger.toggle .bar:nth-child(2) {
+  transform: translateX(-50px);
+  opacity: 0;
+}
+
+.hamburger.toggle .bar:nth-child(3) {
+  width: 30px;
+  transform: rotate(-45deg) translate(7px, -4px) scaleX(1.2);
+}
+@media (max-width: 1000px) {
+  .hamburger {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .nav-links {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  header .logo img {
+    margin-left: 20px;
+  }
+  .hamburger {
+    margin-right: 20px;
+  }
+}

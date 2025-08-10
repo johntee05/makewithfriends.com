@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="header.css" />
+  </head>
+  <body>
+    <!-- header start -->
+    <header>
+      <a href="index.html" class="logo">
+        <img
+          src="Press_IMG/Logo/MWF LOGO_Word_Black.webp"
+          alt=""
+          id="logo-img"
+        />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" style="--i: 1" class="active">Home</a></li>
+        <li><a href="about_us.html" style="--i: 2">About Us</a></li>
+        <li>
+          <a href="accelerator_program.html" style="--i: 3"
+            >Accelerator Program</a
+          >
+        </li>
+        <li><a href="miko_team.html" style="--i: 4">MIKO Team</a></li>
+      </ul>
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="burger_links">
+        <ul>
+          <li style="--i: 1"><a href="index.html" class="active">Home</a></li>
+          <li style="--i: 2"><a href="about_us.html">About Us</a></li>
+          <li style="--i: 3">
+            <a href="accelerator_program.html">Accelerator Program</a>
+          </li>
+          <li style="--i: 4"><a href="miko_team.html">MIKO Team</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        var logoImg = document.getElementById("logo-img");
+        var bars = document.querySelectorAll(".bar");
+
+        if (window.scrollY > 0) {
+          header.classList.add("sticky");
+          logoImg.src = "Press_IMG/Logo/MWF Logo_Word_White.webp";
+          bars.forEach(function (bar) {
+            bar.style.backgroundColor = "white";
+          });
+        } else {
+          header.classList.remove("sticky");
+          logoImg.src = "Press_IMG/Logo/MWF LOGO_Word_Black.webp";
+          bars.forEach(function (bar) {
+            bar.style.backgroundColor = "black";
+          });
+        }
+      });
+    </script>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const burgerLinks = document.querySelector(".burger_links");
+      let menuOpen = false;
+
+      hamburger.addEventListener("click", () => {
+        if (!menuOpen) {
+          burgerLinks.style.display = "block";
+          burgerLinks.style.animation = "slideBottom 0.5s ease forwards";
+          hamburger.classList.add("toggle");
+          menuOpen = true;
+        } else {
+          // 👇 Remove the toggle class immediately so bars animate back right away
+          hamburger.classList.remove("toggle");
+
+          // Then play the close animation
+          burgerLinks.style.animation = "backtoup 0.5s ease forwards";
+
+          // And hide the menu after the animation
+          burgerLinks.addEventListener("animationend", function handler() {
+            burgerLinks.style.display = "none";
+            menuOpen = false;
+            burgerLinks.removeEventListener("animationend", handler);
+          });
+        }
+      });
+    </script>
+    <script>
+      function handleResize() {
+        const burgerLinks = document.querySelector(".burger_links");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (window.innerWidth < 1000) {
+          burgerLinks.style.display = "none";
+
+          // 🔄 Reset hamburger icon and menu state
+          if (hamburger.classList.contains("toggle")) {
+            hamburger.classList.remove("toggle");
+            menuOpen = false;
+          }
+        } else {
+          // On large screens, make sure burger menu is hidden and icon reset
+          burgerLinks.style.display = "";
+          if (hamburger.classList.contains("toggle")) {
+            hamburger.classList.remove("toggle");
+            menuOpen = false;
+          }
+        }
+      }
+
+      // Listen for resize events
+      window.addEventListener("resize", handleResize);
+
+      // Initial check on page load
+      handleResize();
+    </script>
+    <!-- header end -->
+  </body>
+</html>

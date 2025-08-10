@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Make With Friends"
+    />
+    <meta
+      name="description"
+      content="Makewithfriends"
+    />
+    <meta
+      name="description"
+      content="Game Studio"
+    />
+    <title>Make with Friends - A Cozy Indie Game Studio</title>
+    <link rel="stylesheet" href="CSS/loader.css" />
+    <link rel="stylesheet" href="header/header.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link rel="stylesheet" href="footer/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="Press_IMG/Logo/MWF_LOGO_Word_White.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Fredoka/Fredoka.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Quicksand/Quicksand.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Inter/Inter-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/NunitoSans/NunitoSans-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Raleway/Raleway-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <style>
+      header .nav-links a:hover {
+        color: var(--hover_color);
+      }
+      header.sticky .nav-links a:hover {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
+    <main id="mainContent" class="hidden">
+      <!-- header start -->
+      <header>
+        <a href="index.html" class="logo">
+          <img
+            src="Press_IMG/Logo/MWF_LOGO_Word_Black.webp"
+            alt=""
+            id="logo-img"
+          />
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" style="--i: 1" class="active">Home</a>
+          </li>
+          <li>
+            <a href="about_us.html" style="--i: 2">About Us</a>
+          </li>
+          <li>
+            <a href="accelerator_program.html" style="--i: 3"
+              >Accelerator Program</a
+            >
+          </li>
+          <li>
+            <a href="kiwami.html" style="--i: 4">Kiwami</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="burger_links">
+          <ul>
+            <li style="--i: 1">
+              <a href="index.html" class="active">Home</a>
+            </li>
+            <li style="--i: 2">
+              <a href="about_us.html">About Us</a>
+            </li>
+            <li style="--i: 3">
+              <a href="accelerator_program.html">Accelerator Program</a>
+            </li>
+            <li style="--i: 4">
+              <a href="kiwami.html">Kiwami</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <script>
+        window.addEventListener("scroll", function () {
+          var header = document.querySelector("header");
+          var logoImg = document.getElementById("logo-img");
+          var bars = document.querySelectorAll(".bar");
+
+          if (window.scrollY > 0) {
+            header.classList.add("sticky");
+            logoImg.src = "Press_IMG/Logo/MWF_LOGO_Word_White.webp";
+            bars.forEach(function (bar) {
+              bar.style.backgroundColor = "white";
+            });
+          } else {
+            header.classList.remove("sticky");
+            logoImg.src = "Press_IMG/Logo/MWF_LOGO_Word_Black.webp";
+            bars.forEach(function (bar) {
+              bar.style.backgroundColor = "black";
+            });
+          }
+        });
+      </script>
+
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const burgerLinks = document.querySelector(".burger_links");
+        let menuOpen = false;
+
+        hamburger.addEventListener("click", () => {
+          if (!menuOpen) {
+            burgerLinks.style.display = "block";
+            burgerLinks.style.animation = "slideBottom 0.5s ease forwards";
+            hamburger.classList.add("toggle");
+            menuOpen = true;
+          } else {
+            hamburger.classList.remove("toggle");
+
+            burgerLinks.style.animation = "backtoup 0.5s ease forwards";
+
+            burgerLinks.addEventListener("animationend", function handler() {
+              burgerLinks.style.display = "none";
+              menuOpen = false;
+              burgerLinks.removeEventListener("animationend", handler);
+            });
+          }
+        });
+      </script>
+      <script>
+        function handleResize() {
+          const burgerLinks = document.querySelector(".burger_links");
+          const hamburger = document.querySelector(".hamburger");
+
+          if (window.innerWidth < 1000) {
+            burgerLinks.style.display = "none";
+
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          } else {
+            burgerLinks.style.display = "";
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          }
+        }
+
+        window.addEventListener("resize", handleResize);
+
+        handleResize();
+      </script>
+      <!-- header end -->
+      <!-- body start -->
+      <!-- What are we section -->
+      <section class="whatarewe">
+        <h1 class="whatarewe_title">What are we?</h1>
+        <p class="whatarewe_body">
+          Make With Friends is a cozy, collaborative indie game studio based in
+          Malaysia. We craft heartfelt experiences through games, storytelling,
+          and community-driven projects. Our name isn’t just a label — it’s our
+          manifesto. We believe in making with friends, not just for them.
+        </p>
+        <p class="whatarewe_body">
+          Our studio atmosphere is playful yet professional — like a fun
+          creative workshop where everyone’s ideas matter. We’re the team that
+          makes magic with a sketchbook, a good cup of teh-tarik, and honest
+          teamwork.
+        </p>
+        <div class="mwf_illustration">
+          <img
+            src="Press_IMG/Others/MWF_Illustration.webp"
+            alt="Make With Friends Illustration"
+            class="illustration_img"
+          />
+        </div>
+      </section>
+
+      <!-- Game Trailer Section -->
+      <section class="trailer">
+        <h1 class="trailer_title">Current Game Trailer</h1>
+        <!-- <video src="Videos/current_game_trailer.mp4" autoplay muted></video> -->
+        <div class="trailer_container">
+          <!-- <iframe
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/qHIze6X42Uo?si=xgxCowInUiJ2Ibjn"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe> -->
+
+          <img src="Press_IMG/Others/coming_soon_trailer.webp" alt="" />
+          <div class="coming-soon-overlay">
+            <h1 class="coming_soon_text">
+              Coming Soon</span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Accelerator Program Section -->
+      <section class="accelerator">
+        <div class="accelerator_container">
+          <h1 class="accelerator_title">Accelerator Program</h1>
+          <p class="accelerator_body">
+            In the gaming industry, accelerator programs are designed to support
+            startups and independent developers by providing resources,
+            mentorship, and funding to help them refine their games and business
+            models.
+          </p>
+          <p class="accelerator_body">
+            These programs often connect participants with industry veterans,
+            publishers, and investors, offering insights on game development,
+            monetization strategies, and market trends. And MakeWithFriends
+            provides such programs!
+          </p>
+          <h1 class="accelerator_title">Games in our Program</h1>
+          <!-- Games Card 1 Start-->
+          <div class="game_section">
+            <div class="game_img">
+              <img
+                src="Press_IMG/Games/Sushi_Pop.webp"
+                alt="Game Logo"
+                class="game_logo"
+              />
+            </div>
+            <div class="game_info">
+              <h2 class="game_name">Sushi Pop</h2>
+              <p class="game_desc">
+                Sushi POP! Poppin’ Party is a hyper-casual mobile game where you
+                step into the shoes of a sushi chef, flinging sushi at
+                never-ending waves of ravenous, wide-eyed customers. Feed them
+                fast and full until they literally explode in a glorious burst
+                of sushi to keep your precious Meow-chelin stars shining.
+              </p>
+
+              <button
+                class="downloads"
+                type="button"
+                onclick="window.open('https://mwf-studio.itch.io/sushi-pop-poppin-party', '_blank')"
+              >
+                <span class="downloads__text">Visit Here</span>
+                <span class="downloads__icon"
+                  >
+                    <i class="fa-brands fa-itch-io"></i>
+              </span>
+              <img src="" alt="">
+              </button>
+            </div>
+          </div>
+          <!-- Game Card 1 End -->
+          <!-- Game Card 2 Start -->
+          <div class="game_section">
+            <div class="game_img">
+              <img
+                src="Press_IMG/Games/Sushi_Pop.webp"
+                alt="Game Logo"
+                class="game_logo"
+              />
+            </div>
+            <div class="game_info">
+              <h2 class="game_name">Game 2</h2>
+              <p class="game_desc">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
+                cupiditate perspiciatis odit, voluptate hic commodi blanditiis
+                sint omnis quia minima deleniti ex quidem quam? Necessitatibus
+                quibusdam recusandae eaque modi obcaecati?
+              </p>
+
+              <button
+                class="downloads"
+                type="button"
+                onclick="window.open('https://mwf-studio.itch.io/sushi-pop-poppin-party', '_blank')"
+              >
+                <span class="downloads__text">Visit Here</span>
+                <span class="downloads__icon"
+                  ><i class="fa-brands fa-itch-io"></i></span>
+              </button>
+            </div>
+          </div>
+          <!-- Game Card 2 End -->
+          <!-- Game Card 3 Start -->
+          <div class="game_section">
+            <div class="game_img">
+              <img
+                src="Press_IMG/Games/Sushi_Pop.webp"
+                alt="Game Logo"
+                class="game_logo"
+              />
+            </div>
+            <div class="game_info">
+              <h2 class="game_name">Game 3</h2>
+              <p class="game_desc">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque
+                cupiditate perspiciatis odit, voluptate hic commodi blanditiis
+                sint omnis quia minima deleniti ex quidem quam? Necessitatibus
+                quibusdam recusandae eaque modi obcaecati?
+              </p>
+
+              <button
+                class="downloads"
+                type="button"
+                onclick="window.open('https://mwf-studio.itch.io/sushi-pop-poppin-party', '_blank')"
+              >
+                <span class="downloads__text">Visit Here</span>
+                <span class="downloads__icon"
+                  ><i class="fa-brands fa-itch-io"></i></span>
+              </button>
+            </div>
+          </div>
+          <!-- Game Card 3 End -->
+        </div>
+      </section>
+      <section class="miko">
+         <img src="Press_IMG/Logo/KWM_Banner_Trans.webp" alt="" class="kwm_logo">
+        <p class="miko_desc">
+          Named after the Japanese word for “extreme” or “pinnacle”—we focus on
+          delivering high-quality, realistic 3D assets that meet the demands of
+          modern game development.
+        </p>
+        <p class="miko_desc">
+          Our work is delivered in detail, scale, and believability—designed to
+          fit seamlessly into your pipeline and support your game’s vision
+          without compromise.
+        </p>
+      </section>
+      <!-- body end -->
+      <footer>
+        <div class="lets_talk_contact">
+          <h1 class="footer_contact_title">Let's talk</h1>
+          <p class="footer_contact_desc">you making a game?</p>
+          <p class="footer_contact_desc">We are!</p>
+          <p class="footer_contact_desc">
+            Come join our Discord to stay connected!
+          </p>
+        </div>
+        <div class="lets_contact_button">
+          <button class="contact_us" onclick="window.location.href='#'">
+            Contact Us
+          </button>
+          <button class="discord" onclick="window.location.href='#'">
+            Join Discord!
+          </button>
+        </div>
+        <div class="footer_cards">
+          <div class="footer_card">
+            <h1 class="card_title">Reach Us!</h1>
+            <a href="" class="details"
+              ><i class="fa-solid fa-envelope"></i>
+              <div class="detail_text">Email Us</div></a
+            >
+          </div>
+          <div class="footer_card">
+            <h1 class="card_title">Our Socials</h1>
+            <a href="" class="details"
+              ><i class="fa-brands fa-youtube"></i>
+              <div class="detail_text">Youtube</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-linkedin"></i>
+              <div class="detail_text">Linkedin</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-discord"></i>
+              <div class="detail_text">Discord</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-instagram"></i>
+              <div class="detail_text">Instagram</div></a
+            >
+            <a href="" class="details"
+              ><i class="itch-space fa-brands fa-itch-io"></i>
+              <div class="detail_text">Itch.io</div></a
+            >
+          </div>
+        </div>
+      </footer>
+
+      <script src="JS/loader.js"></script>
+    </main>
+  </body>
+</html>

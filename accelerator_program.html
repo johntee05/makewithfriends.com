@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Make With Friends" />
+    <meta name="description" content="Makewithfriends" />
+    <meta name="description" content="Game Studio" />
+    <meta name="description" content="Accelerator Program" />
+    <title>Accelerator Program - Make with Friends</title>
+    <link rel="stylesheet" href="CSS/loader.css" />
+    <link rel="stylesheet" href="header/header.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+    <link rel="stylesheet" href="CSS/accelerator_program.css" />
+    <link rel="stylesheet" href="footer/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="preload"
+      href="Press_IMG/Logo/MWF_Logo_Word_White.webp"
+      as="image"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Fredoka/Fredoka.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Quicksand/Quicksand.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Inter/Inter-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/NunitoSans/NunitoSans-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/Raleway/Raleway-Norm.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/ComicNeue/ComicNeue-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="Font/CabinSketch/CabinSketch-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <style>
+      .hamburger .bar {
+        background-color: white;
+      }
+      header .nav-links a:hover,
+      header.sticky .nav-links a:hover {
+        color: var(--ghost_white);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
+
+    <main id="mainContent" class="hidden">
+      <header>
+        <a href="index.html" class="logo">
+          <img
+            src="Press_IMG/Logo/MWF_LOGO_Word_White.webp"
+            alt=""
+            id="logo-img"
+          />
+        </a>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" style="--i: 1">Home</a>
+          </li>
+          <li>
+            <a href="about_us.html" style="--i: 2">About Us</a>
+          </li>
+          <li>
+            <a href="accelerator_program.html" style="--i: 3" class="active"
+              >Accelerator Program</a
+            >
+          </li>
+          <li>
+            <a href="kiwami.html" style="--i: 4">Kiwami</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="burger_links">
+          <ul>
+            <li style="--i: 1">
+              <a href="index.html">Home</a>
+            </li>
+            <li style="--i: 2">
+              <a href="about_us.html">About Us</a>
+            </li>
+            <li style="--i: 3">
+              <a href="accelerator_program.html" class="active"
+                >Accelerator Program</a
+              >
+            </li>
+            <li style="--i: 4">
+              <a href="kiwami.html">Kiwami</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <script>
+        window.addEventListener("scroll", function () {
+          var header = document.querySelector("header");
+          var logoImg = document.getElementById("logo-img");
+          var bars = document.querySelectorAll(".bar");
+
+          if (window.scrollY > 0) {
+            header.classList.add("sticky");
+          } else {
+            header.classList.remove("sticky");
+          }
+        });
+      </script>
+
+      <script>
+        const hamburger = document.querySelector(".hamburger");
+        const burgerLinks = document.querySelector(".burger_links");
+        let menuOpen = false;
+
+        hamburger.addEventListener("click", () => {
+          if (!menuOpen) {
+            burgerLinks.style.display = "block";
+            burgerLinks.style.animation = "slideBottom 0.5s ease forwards";
+            hamburger.classList.add("toggle");
+            menuOpen = true;
+          } else {
+            // 👇 Remove the toggle class immediately so bars animate back right away
+            hamburger.classList.remove("toggle");
+
+            // Then play the close animation
+            burgerLinks.style.animation = "backtoup 0.5s ease forwards";
+
+            // And hide the menu after the animation
+            burgerLinks.addEventListener("animationend", function handler() {
+              burgerLinks.style.display = "none";
+              menuOpen = false;
+              burgerLinks.removeEventListener("animationend", handler);
+            });
+          }
+        });
+      </script>
+      <script>
+        function handleResize() {
+          const burgerLinks = document.querySelector(".burger_links");
+          const hamburger = document.querySelector(".hamburger");
+
+          if (window.innerWidth < 1000) {
+            burgerLinks.style.display = "none";
+
+            // 🔄 Reset hamburger icon and menu state
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          } else {
+            // On large screens, make sure burger menu is hidden and icon reset
+            burgerLinks.style.display = "";
+            if (hamburger.classList.contains("toggle")) {
+              hamburger.classList.remove("toggle");
+              menuOpen = false;
+            }
+          }
+        }
+
+        // Listen for resize events
+        window.addEventListener("resize", handleResize);
+
+        // Initial check on page load
+        handleResize();
+      </script>
+      <!-- header end -->
+      <section class="makewithfriends">
+        <div class="mwf_info">
+          <div class="mwf_name">Accelerator Program</div>
+          <div class="mwf_desc">
+            Welcome to our website! We’re dedicated to providing high-quality
+            services and reliable support to meet your needs. Explore our
+            offerings, learn more about what we do, and feel free to reach out
+            with any questions. We’re here to help you every step of the way.
+          </div>
+        </div>
+      </section>
+      <section class="hiw">
+        <div class="hiw_container">
+          <img src="image.jpg" />
+          <div class="info">
+            <div class="hiw_title">How it works?</div>
+            <div class="hiw_desc">
+              Welcome to our website! We’re dedicated to providing high-quality
+              services and reliable support to meet your needs. Explore our
+              offerings, learn more about what we do, and feel free to reach out
+              with any questions. We’re here to help you every step of the way.
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="games_accelearing">
+        <div class="ga_title">Games Accelerating</div>
+        <div class="ga_container">
+          <!-- game 1 -->
+          <div class="game_1">
+            <img src="image.jpg" class="game_image" alt="Game Image" />
+            <div class="game_desc">
+              <h2 class="desc_name">Game 1</h2>
+              <p class="desc_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                asperiores hic commodi consequatur iusto alias harum nesciunt
+                inventore tempore assumenda nulla consequuntur soluta, culpa,
+                sunt exercitationem rem aliquid provident maiores.
+              </p>
+              <button
+                class="downloads"
+                type="button"
+                onclick="window.open('https://mwf-studio.itch.io/sushi-pop-poppin-party', '_blank')"
+              >
+                <span class="downloads__text">Visit Here</span>
+                <span class="downloads__icon"
+                  ><i class="fa-brands fa-itch-io"></i
+                ></span>
+              </button>
+            </div>
+          </div>
+          <!-- game 2 -->
+          <div class="game_1">
+            <img src="image.jpg" class="game_image" alt="Game Image" />
+            <div class="game_desc">
+              <h2 class="desc_name">Game 2</h2>
+              <p class="desc_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                asperiores hic commodi consequatur iusto alias harum nesciunt
+                inventore tempore assumenda nulla consequuntur soluta, culpa,
+                sunt exercitationem rem aliquid provident maiores.
+              </p>
+              <button
+                class="downloads"
+                type="button"
+                onclick="window.open('https://mwf-studio.itch.io/sushi-pop-poppin-party', '_blank')"
+              >
+                <span class="downloads__text">Visit Here</span>
+                <span class="downloads__icon"
+                  ><i class="fa-brands fa-itch-io"></i
+                ></span>
+              </button>
+            </div>
+          </div>
+          <!-- game 3 -->
+          <div class="game_1">
+            <img src="image.jpg" class="game_image" alt="Game Image" />
+            <div class="game_desc">
+              <h2 class="desc_name">Game 3</h2>
+              <p class="desc_text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                asperiores hic commodi consequatur iusto alias harum nesciunt
+                inventore tempore assumenda nulla consequuntur soluta, culpa,
+                sunt exercitationem rem aliquid provident maiores.
+              </p>
+              <button
+                class="downloads"
+                type="button"
+                onclick="window.open('https://mwf-studio.itch.io/sushi-pop-poppin-party', '_blank')"
+              >
+                <span class="downloads__text">Visit Here</span>
+                <span class="downloads__icon"
+                  ><i class="fa-brands fa-itch-io"></i
+                ></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="lets_talk_contact">
+          <h1 class="footer_contact_title">Let's talk</h1>
+          <p class="footer_contact_desc">you making a game?</p>
+          <p class="footer_contact_desc">We are!</p>
+          <p class="footer_contact_desc">
+            Come join our Discord to stay connected!
+          </p>
+        </div>
+        <div class="lets_contact_button">
+          <button class="contact_us" onclick="window.location.href='#'">
+            Contact Us
+          </button>
+          <button class="discord" onclick="window.location.href='#'">
+            Join Discord!
+          </button>
+        </div>
+        <div class="footer_cards">
+          <div class="footer_card">
+            <h1 class="card_title">Reach Us!</h1>
+            <a href="" class="details"
+              ><i class="fa-solid fa-envelope"></i>
+              <div class="detail_text">Email Us</div></a
+            >
+          </div>
+          <div class="footer_card">
+            <h1 class="card_title">Our Socials</h1>
+            <a href="" class="details"
+              ><i class="fa-brands fa-youtube"></i>
+              <div class="detail_text">Youtube</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-linkedin"></i>
+              <div class="detail_text">Linkedin</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-discord"></i>
+              <div class="detail_text">Discord</div></a
+            >
+            <a href="" class="details"
+              ><i class="fa-brands fa-instagram"></i>
+              <div class="detail_text">Instagram</div></a
+            >
+            <a href="" class="details"
+              ><i class="itch-space fa-brands fa-itch-io"></i>
+              <div class="detail_text">Itch.io</div></a
+            >
+          </div>
+        </div>
+      </footer>
+      <script src="JS/loader.js"></script>
+    </main>
+  </body>
+</html>
